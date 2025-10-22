@@ -29,9 +29,11 @@ const projects = (await getCollection('projects')).sort(
                                 <Image width={720} height={360} src={p.data.image} alt="" />
                             )}
                             <h4>{p.data.title}</h4>
-                            {p.data.tags.map((t) => (
-                            <p class="text-white text-sm outline rounded-full w-fit px-3 py-1">{t}</p>
-                            ))}
+                            <div class="flex flex-row items-center gap-2">
+                                {p.data.tags.map((t) => (
+                                <p class="text-white text-sm outline rounded-full w-fit px-3 py-1">{t}</p>
+                                ))}
+                            </div>
                         </a>
                     </li>
                 ))

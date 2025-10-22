@@ -10,7 +10,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
 type Props = CollectionEntry<'projects'>['data'];
 
-const { title, description, shortDesc, pubDate, updatedDate, image, tags } = Astro.props;
+const { title, description, shortDesc, pubDate, updatedDate, image, tags, download } = Astro.props;
 ---
 
 <html lang="en">
@@ -30,9 +30,16 @@ const { title, description, shortDesc, pubDate, updatedDate, image, tags } = Ast
 							<FormattedDate date={pubDate} />
 						</div>
 						<h1>{title}</h1>
+						<div class="flex flex-row items-center gap-2">
+                                {tags.map((t) => (
+                                <p class="text-white text-sm outline rounded-full w-fit px-3 py-1">{t}</p>
+                                ))}
+                            </div>
 						<hr>
 					</div>
 					<slot />
+
+					{download && (<a target="_blank" href={download} class="btn">DOWNLOAD THE GAME</a>)}
 				</div>
 			</article>
         </main>

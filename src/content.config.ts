@@ -26,6 +26,7 @@ const projects = defineCollection({
 			pubDate: z.coerce.date(),
 			updatedDate: z.coerce.date().optional(),
 			tags: z.array(z.string()).optional(),
+			download: z.string().optional(),
 			image: image().optional(),
 		}),
 })
@@ -45,18 +46,5 @@ const team = defineCollection({
 		image: image().optional(),
 	})
 })
-
-// const team = defineCollection({
-// 	loader: glob({ base: './src/content/team', pattern: '**/*.{md,mdx}' }),
-// 	schema: ({ image }) =>
-// 		z.object({
-// 			name: z.string(),
-// 			email: z.string(),
-// 			socials: z.string().optional(),
-// 			title: z.array(z.string()),
-// 			image: image().optional(),
-// 			prio: z.number().optional(),
-// 		})
-// })
 
 export const collections = { blog, projects, team };
