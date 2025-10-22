@@ -1,18 +1,50 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+const team = (await getCollection('team')).sort(
+	(a,b) => (b.data.prio ?? 0) - (a.data.prio ?? 0)
+);
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			p {
+				margin: 0;
+				padding: 0;
+				background-color: rgb(var(--gray-dark));
+				width: fit-content;
+			}
+		</style>
 	</head>
 	<body>
         <Header />
-        <main>
+		<main class="flex flex-col gap-5">
+			<h1>meet the team</h1>
+			<ul>
+			{
+				team.map((t) => (
+				<li class="flex flex-row justify-between even:flex-row-reverse">
+						<div class="flex flex-col gap-2">
+							<h4>{t.data.name}</h4>
+							<b class="font-black">{t.data.title}</b>
+
+							<div class="flex flex-col gap-2">
+								<p>{t.data.email}</p>
+								<p>{t.data.socials}</p>
+							</div>
+						</div>
+						<div class="flex-1"></div>
+				</li>
+				))
+			}
+			</ul>
         </main>
         <Footer />
 	</body>
