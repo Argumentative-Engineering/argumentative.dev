@@ -6,6 +6,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Akshar:wght@300..700&display=swap');
 @import "tailwindcss";
 
+@tailwindcss base;
+@tailwindcss components;
+@tailwindcss utilities;
+
 
 :root {
 	--accent: #124FE5;

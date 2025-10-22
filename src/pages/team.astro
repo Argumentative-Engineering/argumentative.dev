@@ -30,17 +30,17 @@ const team = (await getCollection('team')).sort(
 			<ul>
 			{
 				team.map((t) => (
-				<li class="flex flex-row justify-between even:flex-row-reverse">
-						<div class="flex flex-col gap-2">
-							<h4>{t.data.name}</h4>
-							<b class="font-black">{t.data.title}</b>
+				<li class="flex flex-row justify-between group group even:flex-row-reverse">
+					<div class="flex flex-col gap-2 items-start group-even:items-end">
+						<h4>{t.data.name}</h4>
+						<b class="font-black">{t.data.title}</b>
 
-							<div class="flex flex-col gap-2">
-								<p>{t.data.email}</p>
-								<p>{t.data.socials}</p>
-							</div>
+						<div class="flex flex-col gap-2 group-even:items-end">
+							<p>{t.data.email}</p>
+							<p>{t.data.socials}</p>
 						</div>
-						<div class="flex-1"></div>
+					</div>
+					<div class="flex-1"></div>
 				</li>
 				))
 			}
