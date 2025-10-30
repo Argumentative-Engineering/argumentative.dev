@@ -24,6 +24,7 @@ const projects = defineCollection({
 			shortDesc: z.string().optional(),
 			description: z.string(),
 			pubDate: z.coerce.date(),
+			credits: z.array(z.string()).optional(),
 			updatedDate: z.coerce.date().optional(),
 			tags: z.array(z.string()).optional(),
 			download: z.string().optional(),
@@ -32,19 +33,21 @@ const projects = defineCollection({
 })
 
 const team = defineCollection({
-	loader: file("src/content/team.csv", {parser: (text) => csvParse(text, {
-		columns: true,
-		skipEmptyLines: true,
-	})}),
+	loader: file("src/content/team.csv", {
+		parser: (text) => csvParse(text, {
+			columns: true,
+			skipEmptyLines: true,
+		})
+	}),
 	schema: ({ image }) =>
-	z.object({
-		prio: z.coerce.number(),
-		name: z.string(),
-		email: z.string(),
-		socials: z.string().optional(),
-		title: z.string().optional(),
-		image: image().optional(),
-	})
+		z.object({
+			prio: z.coerce.number(),
+			name: z.string(),
+			email: z.string(),
+			socials: z.string().optional(),
+			title: z.string().optional(),
+			image: image().optional(),
+		})
 })
 
 export const collections = { blog, projects, team };

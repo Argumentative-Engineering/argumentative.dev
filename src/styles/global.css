@@ -64,13 +64,15 @@ body {
 	line-height: 1.7;
 	background-color: rgb(var(--black));
 }
-main {
-	/* width: 720px; */
-	/* max-width: calc(100% - 2em); */
-	/* margin: auto; */
-	/* padding: 3em 1em; */
-	/* @apply w-5xl; */
+
+main.content {
+	width: 720px;
+	max-width: calc(100% - 2em);
+	margin: auto;
+	padding: 3em 1em;
+	@apply w-5xl;
 }
+
 h1,
 h2,
 h3,

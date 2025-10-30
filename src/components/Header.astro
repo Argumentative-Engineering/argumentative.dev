@@ -3,21 +3,30 @@ import { Image } from "astro:assets";
 import HeaderLink from './HeaderLink.astro';
 import ArgenLogo from "../assets/branding/argen_text.png";
 
-const {} = Astro.props;
+const { dontHide } = Astro.props;
 ---
 
-<script>
+<script is:inline define:vars={{dontHide}}>
 	window.addEventListener("scroll", () => {
-		const curr = window.scrollY;
+		if (dontHide) {
+			return;
+		}
 
+		const curr = window.scrollY;
 		const header = document.getElementById("header")
+		
 		if (header) {
 			header.className = `fixed ${curr > 150 ? 'opacity-100' : 'opacity-0 pointer-events-none'} top-0 w-full transition-all`;
 		}
 	});
 </script>
 
-<header id="header" class="fixed opacity-0 top-0 w-full pointer-events-none">
+<header id="header" class:list={[
+	"fixed",
+	"top-0",
+	"w-full",
+	dontHide ? "opacity-100" : "opacity-0 pointer-events-none"
+]}>
 	<nav>
 		<a href="/">
 			<Image src={ArgenLogo} alt="Argumentative Engineering" class="w-32" />
@@ -26,7 +35,6 @@ const {} = Astro.props;
 			<HeaderLink href="#hero">home</HeaderLink>
 			<HeaderLink href="#projects">projects</HeaderLink>
 			<HeaderLink href="#team">team</HeaderLink>
-			<!-- <HeaderLink href="/blog">blog</HeaderLink> -->
 		</div>
 	</nav>
 </header>

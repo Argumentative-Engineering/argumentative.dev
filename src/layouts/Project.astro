@@ -10,7 +10,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
 type Props = CollectionEntry<'projects'>['data'];
 
-const { title, pubDate, image, tags, download } = Astro.props;
+const { title, pubDate, credits, image, tags, download } = Astro.props;
 ---
 
 <html lang="en">
@@ -18,9 +18,9 @@ const { title, pubDate, image, tags, download } = Astro.props;
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-		<Header />
-		<main>
-			<article class="space-y-5">
+		<Header dontHide={true} />
+		<main class="content">
+			<article class="space-y-10">
 				<div class="hero-image rounded-lg overflow-clip">
 					{image && <Image width={1020} height={510} src={image} alt={title} />} 
 				</div>
@@ -31,13 +31,27 @@ const { title, pubDate, image, tags, download } = Astro.props;
 						</div>
 						<h1>{title}</h1>
 						<div class="flex flex-row items-center gap-2">
-								{tags && tags.map((t) => (
+							{tags && tags.map((t) => (
 								<p class="text-white text-sm outline rounded-full w-fit px-3 py-1">{t}</p>
-								))}
+							))}
 						</div>
 						<hr>
 					</div>
 					<slot />
+
+					<hr>
+					<div class="prose space-y-3">
+						<h4>dev team</h4>
+						<ul class="list-disc grid grid-cols-3 list-inside">
+							{
+								credits?.map((c) => (
+								<li class="text-md">
+									{c}
+								</li>
+								))
+							}
+						</ul>
+					</div>
 
 					{download ? (<a target="_blank" href={download} class="btn">DOWNLOAD THE GAME</a>) : <div class="btn">THE GAME IS UNDER DEVELOPMENT</div>}
 				</div>

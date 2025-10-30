@@ -4,6 +4,7 @@ description: 'the space between'
 pubDate: 'Oct 10 2025'
 tags: ['Puzzle']
 image: '../../assets/projects/tsb/4.jpg'
+credits: ["Mazio Manaid", "Seifer Albacete", "Aaron Magat", "Christina Pangue", "Andrei Quirante"]
 ---
 
 Made as a finals project for College Physics. We were instructed to make a game that demonstrated the three laws of physics, so we made a narrative puzzle game set in space. <u>**In zero gravity, even moving an inch is a puzzle.**</u>
