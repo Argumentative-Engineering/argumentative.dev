@@ -19,9 +19,9 @@ const { title, pubDate, credits, image, tags, download } = Astro.props;
 	</head>
 	<body>
 		<Header dontHide={true} />
-		<main class="content">
+		<main class="content m-auto">
 			<article class="space-y-10">
-				<div class="hero-image rounded-lg overflow-clip">
+				<div class="hero-image h-[480px] rounded-lg overflow-clip">
 					{image && <Image width={1020} height={510} src={image} alt={title} />} 
 				</div>
 				<div class="prose space-y-3">
