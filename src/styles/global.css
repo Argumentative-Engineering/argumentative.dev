@@ -65,11 +65,9 @@ body {
 	background-color: rgb(var(--black));
 }
 
-main.content {
+.content {
 	width: 720px;
 	max-width: calc(100% - 2em);
-	margin: auto;
-	padding: 3em 1em;
 	@apply w-5xl;
 }
 
@@ -157,7 +155,6 @@ hr {
 		font-size: 18px;
 	}
 	main {
-		padding: 1em;
 	}
 }
 

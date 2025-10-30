@@ -36,7 +36,7 @@ const projects = (await getCollection('projects')).sort(
                         </div>
                         <h4>{p.data.title}</h4>
                     </div>
-                   
+
                     <div class="flex flex-row items-center gap-2">
                         {p.data.tags?.map((t) => (
                         <p class="text-white text-sm outline rounded-full w-fit px-3 py-1">{t}</p>

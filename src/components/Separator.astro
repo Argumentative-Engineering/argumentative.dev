@@ -1,9 +1,45 @@
 ---
 import {Image} from "astro:assets"
-import Logo from "../assets/branding/argen_logo_transparent.png";
+import TextLogo from "../assets/branding/argen_text.png";
 ---
 
-<div class="flex flex-row items-center justify-center w-full bg-white py-2 gap-5">
-  <Image src={Logo} class="w-32" alt="" />
-  <h1 class="!text-black">GAMES WITH CLAWS. STORIES WITH TEETH.</h1>
-</div>
+<section id="about" class="index-section gap-3 bg-blue-600">
+  <Image src={TextLogo} alt="ARGUMENTATIVE ENGINEERING" class="w-1/2"/>
+
+  <div class="prose content text-3xl">
+    <p>is an indie game studio founded and formed by Mazio Manaid, Seifer Albacete, Andrei Quirante, and Aaron Magat.</p>
+    <p>Argumentative Engineering, or Argumentative or ArgEn, is dedicated to making games that prove points, open eyes, and change minds.</p>
+  </div>
+</section>
+
+<section id="claws" class="index-section gap-3 bg-white">
+  <h1 class="!text-black !text-[2.5rem]">GAMES WITH CLAWS. STORIES WITH TEETH.</h1>
+
+  <div class="prose content text-black text-3xl">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam recusandae nisi rerum libero officia, et voluptate repellendus eveniet laudantium dolore consequatur explicabo consectetur veritatis sint possimus quam sed accusamus nesciunt!
+  </div>
+</section>
+
+<section id="mission-vision" class="index-section gap-3 bg-black">
+  <h1 class="!text-black !text-[2.5rem]">MISSION</h1>
+
+  <div class="flex flex-col w-1/2">
+    <div id="vision" class="mv">
+      <h2>VISION</h2>
+      <p>To make games powerful enough to start discussions and foster relationships within its players, whether this is achieved through stories or competitiveness.</p>
+    </div>
+
+    <div id="mission" class="mv self-end items-end text-end">
+      <h2>MISSION</h2>
+      <p>To establish ourselves as a game studio that leverages the potential of storytelling that is unique to game development by forming stories that are most impactful when told throuh games and player experience.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .mv {
+    max-width: 30vw;
+    display: flex;
+    flex-direction: column;
+  }
+</style>
