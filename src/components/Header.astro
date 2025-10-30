@@ -1,28 +1,40 @@
 ---
 import { Image } from "astro:assets";
-import { SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
 import ArgenLogo from "../assets/branding/argen_text.png";
+
+const {} = Astro.props;
 ---
 
-<header>
+<script>
+	window.addEventListener("scroll", () => {
+		const curr = window.scrollY;
+
+		const header = document.getElementById("header")
+		if (header) {
+			header.className = `fixed ${curr > 150 ? 'opacity-100' : 'opacity-0 pointer-events-none'} top-0 w-full transition-all`;
+		}
+	});
+</script>
+
+<header id="header" class="fixed opacity-0 top-0 w-full pointer-events-none">
 	<nav>
 		<a href="/">
 			<Image src={ArgenLogo} alt="Argumentative Engineering" class="w-32" />
 		</a>
 		<div class="internal-links">
-			<HeaderLink href="/">home</HeaderLink>
-			<HeaderLink href="/projects">projects</HeaderLink>
-			<HeaderLink href="/team">team</HeaderLink>
+			<HeaderLink href="#hero">home</HeaderLink>
+			<HeaderLink href="#projects">projects</HeaderLink>
+			<HeaderLink href="#team">team</HeaderLink>
 			<!-- <HeaderLink href="/blog">blog</HeaderLink> -->
 		</div>
 	</nav>
 </header>
+
 <style>
 	header {
 		margin: 0;
 		padding: 0 1em;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
 	}
 	h2 {
 		margin: 0;

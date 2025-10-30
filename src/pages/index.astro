@@ -1,21 +1,33 @@
 ---
+import { Image } from "astro:assets";
 import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import ArgEnCard from "../assets/branding/ArgEn_Card.png";
+import Header from "../components/Header.astro"
+import Footer from "../components/Footer.astro";
+
+import Projects from "./projects/index.astro";
+import Team from "./team.astro";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
 		<Header />
-		<main class="flex flex-col h-full items-start">
-			<h1>GAMES WITH CLAWS.<br>STORIES WITH TEETH.</h1>
-			<p>committed to making games that prove points, open eyes, and change minds</p>
-			<a class="btn" href="">start an argument</a>
+			<main class="flex flex-col items-start">
+			<!-- <h1>GAMES WITH CLAWS.<br>STORIES WITH TEETH.</h1> -->
+			<!-- <p>committed to making games that prove points, open eyes, and change minds</p> -->
+			<!-- <a class="btn" href="">start an argument</a> -->
+
+			<section id="hero" class="index-section bg-red-500">
+				<Image src={ArgEnCard} alt="" class="w-5xl animate-fade-up animate-once" loading={"eager"}/>
+			</section >
+
+			<Projects />
+			<Team />
 		</main>
 		<Footer />
 	</body>
