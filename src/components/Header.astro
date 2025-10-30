@@ -18,6 +18,11 @@ const { dontHide } = Astro.props;
 		if (header) {
 			header.className = `fixed ${curr > 150 ? 'opacity-100' : 'opacity-0 pointer-events-none'} top-0 w-full transition-all`;
 		}
+
+		const scr = document.getElementById("scroll-hint")
+		if (scr && curr > 300) {
+			scr.className = "opacity-0 absolute transition-all"
+		}
 	});
 </script>
 

@@ -186,6 +186,6 @@ hr {
 }
 
 .index-section {
-	@apply min-h-[100vh] w-full flex flex-col justify-center items-center
+	@apply min-h-[100vh] w-full flex flex-col justify-center items-center gap-10
 }
 

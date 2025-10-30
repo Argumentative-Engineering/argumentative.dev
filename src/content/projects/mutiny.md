@@ -5,6 +5,7 @@ pubDate: Oct 10 2025
 tags: ['Platformer', 'Action']
 image: '../../assets/projects/mutiny/1.png'
 download: https://zsfer.itch.io/mutiny
+status: "In-Development"
 credits: ["Seifer Albacete", "Jed Magallon", "Mazio Manaid", "Aaron Magat", "Christina Pangue", "Andrei Quirante"]
 ---
 

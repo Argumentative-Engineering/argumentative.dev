@@ -24,6 +24,7 @@ const projects = defineCollection({
 			shortDesc: z.string().optional(),
 			description: z.string(),
 			pubDate: z.coerce.date(),
+			status: z.enum(["Prototype", "In-Development", "Released"]),
 			credits: z.array(z.string()).optional(),
 			updatedDate: z.coerce.date().optional(),
 			tags: z.array(z.string()).optional(),
