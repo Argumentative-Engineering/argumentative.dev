@@ -10,7 +10,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
 type Props = CollectionEntry<'projects'>['data'];
 
-const { title, description, shortDesc, pubDate, updatedDate, image, tags, download } = Astro.props;
+const { title, pubDate, image, tags, download } = Astro.props;
 ---
 
 <html lang="en">
@@ -18,7 +18,7 @@ const { title, description, shortDesc, pubDate, updatedDate, image, tags, downlo
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-        <Header />
+		<Header />
 		<main>
 			<article class="space-y-5">
 				<div class="hero-image rounded-lg overflow-clip">
@@ -31,15 +31,15 @@ const { title, description, shortDesc, pubDate, updatedDate, image, tags, downlo
 						</div>
 						<h1>{title}</h1>
 						<div class="flex flex-row items-center gap-2">
-                                {tags.map((t) => (
-                                <p class="text-white text-sm outline rounded-full w-fit px-3 py-1">{t}</p>
-                                ))}
-                            </div>
+								{tags && tags.map((t) => (
+								<p class="text-white text-sm outline rounded-full w-fit px-3 py-1">{t}</p>
+								))}
+						</div>
 						<hr>
 					</div>
 					<slot />
 
-					{download && (<a target="_blank" href={download} class="btn">DOWNLOAD THE GAME</a>)}
+					{download ? (<a target="_blank" href={download} class="btn">DOWNLOAD THE GAME</a>) : <div class="btn">THE GAME IS UNDER DEVELOPMENT</div>}
 				</div>
 			</article>
         </main>
