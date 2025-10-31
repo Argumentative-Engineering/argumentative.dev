@@ -3,7 +3,8 @@ title: Asymptomatic
 description: A patient comes in and describes their symptoms, and you are given a list of everything it could be – all with buts.
 pubDate: April 18, 2025
 tags: ['Fiction', 'Puzzle']
-image: '../../assets/projects/asymptomatic/1.jpg'
+images: ['../../assets/projects/asymptomatic/1.jpg']
+coverImage: '../../assets/projects/asymptomatic/1.jpg'
 download: https://edgeworthenvy.itch.io
 status: "In-Development"
 credits: ["Mazio Manaid", "Cicero Barasi", "Aaron Magat", "Joshua Reyna", "Julian Lopez", "Seifer Albacete"]

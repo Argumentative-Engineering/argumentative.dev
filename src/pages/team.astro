@@ -15,13 +15,13 @@ const team = (await getCollection('team')).sort(
 	}
 </style>
 <section id="team" class="index-section gap-5">
-	<h1>meet the team</h1>
+	<h1>MEET THE TEAM</h1>
 	<ul class="grid grid-cols-4 gap-10 px-10">
 		{
 			team.map((t) => (
 				<li class="flex flex-row items-start justify-center">
 					<div class="flex flex-col gap-2 items-center">
-						<h4 class="leading-3">{t.data.name}</h4>
+						<h4 class="leading-3 text-center">{t.data.name}</h4>
 						<b class="font-black text-center text-sm">{t.data.title}</b>
 
 						<div class="flex flex-col gap-2 items-center">

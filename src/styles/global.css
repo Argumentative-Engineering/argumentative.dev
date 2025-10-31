@@ -3,7 +3,7 @@
   https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
-@import url('https://fonts.googleapis.com/css2?family=Abel&family=Akshar:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Akshar:wght@300..700&family=Anton&display=swap');
 @import "tailwindcss";
 @import "tailwindcss-animated";
 
@@ -77,7 +77,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: "Akshar", sans-serif;
+	font-family: "Anton", sans-serif;
 	margin: 0 0 0.5rem 0;
 	color: white;
 	line-height: 1.2;

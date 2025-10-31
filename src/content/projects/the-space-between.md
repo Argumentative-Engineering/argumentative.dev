@@ -2,8 +2,9 @@
 title: 'The Space Between'
 description: 'the space between'
 pubDate: 'Oct 10 2025'
-tags: ['Puzzle']
-image: '../../assets/projects/tsb/4.jpg'
+tags: ['Puzzle', 'Always Free']
+images: ['../../assets/projects/tsb/2.jpg', '../../assets/projects/tsb/5.jpg', '../../assets/projects/tsb/4.jpg']
+coverImage: '../../assets/projects/tsb/1.jpg'
 status: "Prototype"
 credits: ["Mazio Manaid", "Seifer Albacete", "Aaron Magat", "Christina Pangue", "Andrei Quirante"]
 ---
