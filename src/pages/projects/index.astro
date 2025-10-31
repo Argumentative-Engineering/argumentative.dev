@@ -7,18 +7,20 @@ const projects = (await getCollection('projects')).sort(
 );
 ---
 
-<section id="projects" class="index-section items-center gap-3">
+<section id="projects" class="index-section items-center gap-3 mt-12">
     <h1>PROJECTS</h1>
-    <ul class="grid grid-cols-2 m-0 p-0 gap-5">
+    <ul class="grid grid-cols-2 m-0 p-0 gap-10">
         {
         projects.map((p) => (
             <li class="animate-fade animate-once hover:scale-101 transition-all">
                 <a class="flex flex-col gap-5" href={`/projects/${p.id}/`}>
+                    <div class="w-xl overflow-clip">
                     {
                         p.data.coverImage && (
                         <Image width={720} height={360} src={p.data.coverImage} alt="" />
                         )
-                    }
+                        }
+                    </div>
                     <div class="flex flex-col gap-1">
                         <div class:list={[`text-sm rounded-full w-fit h-fit px-3 flex flex-row items-center gap-2`,
                             p.data.status === "Prototype" && "text-red-700 bg-red-100",
